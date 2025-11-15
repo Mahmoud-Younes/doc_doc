@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/theming/styles.dart';
@@ -14,10 +15,7 @@ class DoctorImageAndText extends StatelessWidget {
         Container(
           foregroundDecoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                Colors.white,
-                Colors.white.withOpacity(0.0),
-              ],
+              colors: [Colors.white, Colors.white.withValues(alpha: 0.0)],
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
               stops: const [0.14, 0.4],
@@ -32,9 +30,7 @@ class DoctorImageAndText extends StatelessWidget {
           child: Text(
             'Best Doctor\nAppointment App',
             textAlign: TextAlign.center,
-            style: TextStyles.font32BlueBold.copyWith(
-              height: 1.4,
-            ),
+            style: TextStyles.font32BlueBold.copyWith(height: 1.4.h),
           ),
         ),
       ],

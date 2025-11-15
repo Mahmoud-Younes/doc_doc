@@ -6,3 +6,24 @@ flutter_native_splash:
   android_12:
     image: assets/images/splash_android12_logo.png
     color: "#ffffff"
+    
+  # dart run flutter_native_splash:create --path=flutter_native_splash.yaml 
+  # first frame 640*640 circle
+  # second 960*960 rectangle
+  # export png *4 
+
+  
+  # from doucmotation
+
+  #  1. أيقونة مع خلفية:
+  # يجب أن يكون حجم الصورة 960×960 بكسل.
+
+  # ويجب أن تتناسب مع دائرة قطرها 640 بكسل.
+
+  # 2. أيقونة بدون خلفية:
+  # يجب أن يكون حجم الصورة 1152×1152 بكسل.
+
+  # ويجب أن تتناسب مع دائرة قطرها 768 بكسل.
+
+  # ولتحقيق ذلك، يجب أن تكون العناصر المهمة في التصميم داخل دائرة بقطر 768 في منتصف الصورة (داخل مساحة 1152x1152)
+  
