@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "612456605636",
+    "project_id": "flutter-wael-44fac",
+    "storage_bucket": "flutter-wael-44fac.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612456605636:android:b61a3111eed95884fe6691",
+        "android_client_info": {
+          "package_name": "com.example.doc_doc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAz_qYac6Az_-9ELuVG1pDmFuZ3htSKcwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
