@@ -10,13 +10,13 @@ platform :android do
     # sh "flutter clean"
     # sh "flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons --split-per-abi"
     firebase_app_distribution(
-        app: "",#from firebase 
-        firebase_cli_token: "",  #ENV["FIREBASE_CLI_TOKEN"],
+        app: "1:612456605636:android:b61a3111eed95884fe6691",#from firebase 
+        firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
         android_artifact_type: "APK",
         android_artifact_path: "../build/app/outputs/flutter-apk/app-arm64-v8a-production-release.apk",
         testers: "mahyounes73@gmail.com",
         release_notes: "first distribution from fastlane",
-        upload_timeout: 1200   # for increased timeout ,, internet weak ,, 20 minutes
+        upload_timeout: 2400   # for increased timeout ,, internet weak ,, 20 minutes
   )
   end
 end
