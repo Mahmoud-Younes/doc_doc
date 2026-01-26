@@ -8,7 +8,7 @@ platform :android do
   desc "Lane for Android Firebase App Distribution"
   lane :firebase_distribution do
     sh "flutter clean"
-    sh "flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons --split-per-abi"
+    sh "flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons"
     firebase_app_distribution(
         app: "1:612456605636:android:b61a3111eed95884fe6691",#from firebase 
         firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
@@ -22,5 +22,8 @@ platform :android do
 end
 # pubspec.yaml version: 1.0.0+1 modifiy
 # all commands are executed from the android // cd android
-# sh "flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons"
+# sh "flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons --split-per-abi"
 # to run   fastlane <lane>   // fastlane android firebase_distribution
+
+
+# sh "flutter build appbundle --release --flavor development --target lib/main_development.dart --no-tree-shake-icons"
