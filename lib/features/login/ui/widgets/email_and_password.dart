@@ -15,6 +15,7 @@ class EmailAndPassword extends StatefulWidget {
 
 class _EmailAndPasswordState extends State<EmailAndPassword> {
   bool isObscureText = true;
+
   bool hasLowercase = false;
   bool hasUppercase = false;
   bool hasSpecialCharacters = false;
@@ -35,9 +36,8 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
       setState(() {
         hasLowercase = AppRegex.hasLowerCase(passwordController.text);
         hasUppercase = AppRegex.hasUpperCase(passwordController.text);
-        hasSpecialCharacters = AppRegex.hasSpecialCharacter(
-          passwordController.text,
-        );
+        hasSpecialCharacters =
+            AppRegex.hasSpecialCharacter(passwordController.text);
         hasNumber = AppRegex.hasNumber(passwordController.text);
         hasMinLength = AppRegex.hasMinLength(passwordController.text);
       });

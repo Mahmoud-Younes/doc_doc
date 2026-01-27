@@ -1,6 +1,7 @@
 import 'package:doc_doc/core/helpers/spacing.dart';
 import 'package:doc_doc/core/theming/colors.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../core/theming/styles.dart';
 
 class PasswordValidations extends StatelessWidget {

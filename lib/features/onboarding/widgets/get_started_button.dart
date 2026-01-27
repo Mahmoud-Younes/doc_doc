@@ -2,7 +2,7 @@ import 'package:doc_doc/core/helpers/extensions.dart';
 import 'package:doc_doc/core/theming/colors.dart';
 import 'package:doc_doc/core/theming/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../core/routing/routes.dart';
 
 class GetStartedButton extends StatelessWidget {
@@ -17,12 +17,19 @@ class GetStartedButton extends StatelessWidget {
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.all(ColorsManager.mainBlue),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        minimumSize: WidgetStateProperty.all(Size(double.infinity, 52.h)),
+        minimumSize: WidgetStateProperty.all(
+          const Size(double.infinity, 52),
+        ),
         shape: WidgetStateProperty.all(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
         ),
       ),
-      child: Text('Get Started', style: TextStyles.font16WhiteMedium),
+      child: Text(
+        'Get Started',
+        style: TextStyles.font16WhiteMedium,
+      ),
     );
   }
 }
