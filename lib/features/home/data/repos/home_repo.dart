@@ -1,4 +1,3 @@
-
 import 'package:doc_doc/core/networking/api_error_handler.dart';
 import 'package:doc_doc/core/networking/api_result.dart';
 import 'package:doc_doc/features/home/data/apis/home_api_service.dart';
@@ -14,7 +13,7 @@ class HomeRepo {
       final response = await _homeApiService.getSpecialization();
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(ErrorHandler.handle(error));
+      return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
 }
