@@ -2,6 +2,7 @@ import 'package:doc_doc/core/helpers/extensions.dart';
 import 'package:doc_doc/features/sign_up/logic/sign_up_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
@@ -23,7 +24,9 @@ class SignupBlocListener extends StatelessWidget {
             showDialog(
               context: context,
               builder: (context) => const Center(
-                child: CircularProgressIndicator(color: ColorsManager.mainBlue),
+                child: CircularProgressIndicator(
+                  color: ColorsManager.mainBlue,
+                ),
               ),
             );
           },
@@ -31,8 +34,8 @@ class SignupBlocListener extends StatelessWidget {
             context.pop();
             showSuccessDialog(context);
           },
-          signupError: (error) {
-            setupErrorState(context, error);
+          signupError: (apiErrorModel) {
+            setupErrorState(context, apiErrorModel);
           },
         );
       },
@@ -58,7 +61,7 @@ class SignupBlocListener extends StatelessWidget {
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white,
                 backgroundColor: Colors.blue,
-                disabledForegroundColor: Colors.grey.withValues(alpha: 0.38),
+                disabledForegroundColor: Colors.grey.withValues(alpha:0.38),
               ),
               onPressed: () {
                 context.pushNamed(Routes.loginScreen);
@@ -71,19 +74,29 @@ class SignupBlocListener extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String error) {
+  void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
     context.pop();
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        icon: const Icon(Icons.error, color: Colors.red, size: 32),
-        content: Text(error, style: TextStyles.font15DarkBlueMedium),
+        icon: const Icon(
+          Icons.error,
+          color: Colors.red,
+          size: 32,
+        ),
+        content: Text(
+          apiErrorModel.getAllErrorMessages(),
+          style: TextStyles.font15DarkBlueMedium,
+        ),
         actions: [
           TextButton(
             onPressed: () {
               context.pop();
             },
-            child: Text('Got it', style: TextStyles.font14BlueSemiBold),
+            child: Text(
+              'Got it',
+              style: TextStyles.font14BlueSemiBold,
+            ),
           ),
         ],
       ),
